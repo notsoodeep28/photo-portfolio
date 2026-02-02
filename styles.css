@@ -1,0 +1,9 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont,
+               "Helvetica Neue", Arial, sans-serif;
+}
+
+.gallery img {
+  width: 100%;
+  margin-bottom: 3rem;
+}

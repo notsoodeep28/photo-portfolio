@@ -1,0 +1,11 @@
+# RStudio
+.Rproj.user/
+.Rhistory
+
+# Quarto
+.quarto/
+_site/
+
+# System
+.DS_Store
+Thumbs.db
