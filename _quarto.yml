@@ -15,7 +15,7 @@ website:
 
 format:
   html:
-    theme: jornal
+    theme: lumen
     css: styles.css
     toc: false
 
