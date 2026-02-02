@@ -5,8 +5,8 @@ project:
 website:
   title: "Photo Portfolio"
   navbar:
-    right:
-      - text: Portfolio
+    left:
+      - text: Inicio
         href: index.qmd
       - text: Información
         href: about.qmd
