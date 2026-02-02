@@ -1,41 +1,57 @@
+/* Fondo general */
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #ffffff;
-  color: #111;
+  background-color: #f4f4f4;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.hero {
+/* Tarjeta centrada */
+.card {
+  background-color: #fff;
+  padding: 3rem 4rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   text-align: center;
+  max-width: 400px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.hero p {
-  font-size: 1.2rem;
-  color: #555;
+/* Nombre y frase */
+.card h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+  color: #111;
+}
+
+.card p {
   margin-bottom: 2rem;
+  color: #555;
+  font-size: 1.1rem;
 }
 
-.links a {
+/* Links estilo botones */
+.card-links a {
+  display: inline-block;
   text-decoration: none;
   color: #111;
   font-weight: 600;
-  margin: 0 1rem;
-  padding: 0.5rem 1rem;
+  margin: 0.3rem 0.5rem;
+  padding: 0.6rem 1.2rem;
   border: 2px solid #111;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: all 0.3s;
 }
 
-.links a:hover {
+.card-links a:hover {
   background-color: #111;
   color: #fff;
 }
