@@ -3,17 +3,19 @@ project:
   output-dir: .
 
 website:
-  title: "Photo Portfolio"
+  title: "Not So Deep Photography"
   navbar:
-    left:
+    right:
       - text: Inicio
         href: index.qmd
       - text: Información
         href: about.qmd
+      - text: Black And White
+        href: bnw.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: jornal
     css: styles.css
     toc: false
 

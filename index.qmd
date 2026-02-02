@@ -1,15 +1,9 @@
 ---
-title: ""
+title: "Not So Deep Photography"
 ---
-
-# Not So Deep Photography
 
 Photography in Costa Rica.\
 35mm and digital.
 
 ------------------------------------------------------------------------
 
-::: gallery
-![](images/11-1-26-11.jpg)
-![](images/10-1-26-01.jpg)
-:::

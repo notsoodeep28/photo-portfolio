@@ -1,0 +1,14 @@
+---
+title: "Blanck And White"
+---
+
+::: gallery
+![](images/11-1-26-11.jpg)
+![](images/10-1-26-02.jpg)
+
+![](images/10-1-26-16.jpg)
+
+![](images/20260201-DSV_8554.jpg)
+:::
+
+
