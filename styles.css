@@ -7,3 +7,19 @@ body {
   width: 100%;
   margin-bottom: 3rem;
 }
+
+.gallery img {
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+h1, h2 {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+

@@ -4,11 +4,12 @@ title: "Not_soo_deep"
 
 # Portfolio
 
-Street photography in Costa Rica.\
+Photography in Costa Rica.\
 35mm and digital.
 
 ------------------------------------------------------------------------
 
 ::: gallery
 ![](images/11-1-26-11.jpg)
+![](images/10-1-26-01.jpg)
 :::
