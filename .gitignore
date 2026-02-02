@@ -9,3 +9,5 @@ _site/
 # System
 .DS_Store
 Thumbs.db
+
+/.quarto/
