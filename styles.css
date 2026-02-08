@@ -1,59 +1,171 @@
-/* Fondo general */
-body {
+/* ===== RESET TOTAL ===== */
+* {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #f4f4f4;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.cover {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-}
-
-/* Tarjeta centrada */
-.card {
-  background-color: #fff;
-  padding: 3rem 4rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  min-height: 100vh; /* Cambiado a min-height para mejor compatibilidad */
   text-align: center;
-  max-width: 400px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-/* Nombre y frase */
-.card h1 {
-  margin: 0 0 1rem 0;
-  font-size: 2.5rem;
-  color: #111;
-}
-
-.card p {
-  margin-bottom: 2rem;
-  color: #555;
-  font-size: 1.1rem;
-}
-
-/* Links estilo botones */
-.card-links a {
+/* ===== TÍTULO PRINCIPAL (NOT SOO DEEP) ===== */
+.cover h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  
+  /* Solución 1: Usar text-indent para compensar */
+  text-indent: 0.3em; /* Compensa visualmente el letter-spacing */
+  
+  /* Solución 2: O usar un contenedor con overflow */
   display: inline-block;
-  text-decoration: none;
-  color: #111;
-  font-weight: 600;
-  margin: 0.3rem 0.5rem;
-  padding: 0.6rem 1.2rem;
-  border: 2px solid #111;
-  border-radius: 8px;
-  transition: all 0.3s;
+  margin: 0; /* Elimina márgenes por defecto */
+  padding: 0;
+  line-height: 1;
+  margin-bottom: 2.0rem;
+  
+  /* Asegurar que no haya espacios en blanco extra */
+  white-space: nowrap;
 }
 
-.card-links a:hover {
-  background-color: #111;
-  color: #fff;
+/* Eliminar el espacio extra del letter-spacing al final */
+.cover h2::after {
+  content: '';
+  display: inline-block;
+  width: 0.3em; /* Igual al letter-spacing */
+  height: 0;
 }
+
+/* ===== NAVEGACIÓN (HOME ABOUT PROJECTS) ===== */
+.cover-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 2rem; /* Usar margin-top en lugar de margin-bottom en h2 */
+}
+
+.cover-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
+  padding: 0.5em 0; /* Añadir padding vertical para mejor click */
+  
+  /* Compensar el letter-spacing visualmente */
+  position: relative;
+  left: -0.1em; /* Mitad del letter-spacing para centrar visualmente */
+}
+
+/* Alternativa más limpia para los enlaces */
+.cover-nav a::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0.1em; /* Compensa visualmente */
+  width: 100%;
+}
+
+.cover-nav a:hover {
+  opacity: 0.8;
+}
+
+/* Otra alternativa: usar un wrapper con padding negativo */
+.cover-nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  padding-right: 0.2em; /* Compensa el último letter-spacing */
+}
+
+/* ===== AJUSTE DE ALINEACIÓN VERTICAL ===== */
+/* Si aún parece descentrado verticalmente, prueba esto: */
+.cover::before {
+  content: '';
+  flex: 1;
+  min-height: 20px;
+}
+
+.cover::after {
+  content: '';
+  flex: 1;
+  min-height: 20px;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  grid-template-rows: auto auto;
+  gap: 40px;
+  max-width: 900px;
+
+  margin: 0 auto;                 /* centra horizontal */
+  min-height: 100vh;              /* ocupa toda la altura */
+  align-content: center;          /* centra verticalmente */
+
+  color: #fff;                    /* blanco puro */
+  font-weight: 100;               /* negrita */
+}
+
+/* TEXTO */
+.about-text {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 30px;
+  line-height: 2;
+  max-width: 420px;
+  text-align: justify;
+}
+
+
+/* IMAGEN */
+.about-image {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: 100%;
+}
+
+/* NAV */
+.mini-nav {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  gap: 32px;
+}
+
+.mini-link {
+  color: #fff;
+  text-decoration: none;   /* 🔑 quita líneas de abajo */
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.mini-link:hover {
+  opacity: 1;
+}
+
+
+
 
 

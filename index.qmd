@@ -1,9 +1,14 @@
 ---
-title: "Not So Deep Photography"
+title: ""
+page-layout: full
 ---
 
-Photography in Costa Rica.\
-35mm and digital.
+::: cover
+<h2>NOT SOO DEEP PHOTO</h2>
 
-------------------------------------------------------------------------
+<nav class="cover-nav">
 
+<a href="index.html">HOME</a> <a href="about.html">ABOUT</a> <a href="projects.html">PROJECTS</a> <a href="MORE.html">MORE</a>
+
+</nav>
+:::

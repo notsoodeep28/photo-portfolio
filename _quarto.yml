@@ -3,19 +3,11 @@ project:
   output-dir: .
 
 website:
-  title: "Not So Deep Photography"
-  navbar:
-    right:
-      - text: Inicio
-        href: index.qmd
-      - text: Información
-        href: about.qmd
-      - text: Black And White
-        href: bnw.qmd
+  title: ""
 
 format:
   html:
-    theme: lumen
     css: styles.css
-    toc: false
+    search: false
+
 
