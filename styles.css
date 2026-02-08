@@ -53,49 +53,48 @@ body {
 }
 
 /* ===== NAVEGACIÓN (HOME ABOUT PROJECTS) ===== */
+
+/* ===== NAVEGACIÓN (HOME ABOUT PROJECTS) ===== */
 .cover-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;  /* centra los enlaces horizontalmente */
+  gap: 10rem;                /* distancia entre enlaces, ajusta a tu gusto */
   width: 100%;
   max-width: 900px;
-  margin-top: 2rem; /* Usar margin-top en lugar de margin-bottom en h2 */
+  margin-top: 2rem;         /* separa del h2 */
+  word-spacing: 5rem
 }
 
 .cover-nav a {
   color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
+  word-spacing: 10rem
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   transition: opacity 0.3s;
-  padding: 0.5em 0; /* Añadir padding vertical para mejor click */
+  padding: 0.5em 0;          /* espacio vertical para hacer clic más fácil */
   
-  /* Compensar el letter-spacing visualmente */
-  position: relative;
-  left: -0.1em; /* Mitad del letter-spacing para centrar visualmente */
-}
-
-/* Alternativa más limpia para los enlaces */
-.cover-nav a::before {
-  content: attr(data-text);
-  position: absolute;
-  left: 0.1em; /* Compensa visualmente */
-  width: 100%;
+  position: relative;        /* necesario si quieres animaciones u otros pseudo-elementos */
+  left: 0;                   /* eliminamos compensaciones raras */
 }
 
 .cover-nav a:hover {
   opacity: 0.8;
 }
 
-/* Otra alternativa: usar un wrapper con padding negativo */
+/* Si quieres usar un contenedor wrapper para más control */
 .cover-nav-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;   /* centra todos los enlaces */
   width: 100%;
   max-width: 900px;
-  padding-right: 0.2em; /* Compensa el último letter-spacing */
+  /* padding opcional si quieres compensar visualmente */
 }
+
+
+
 
 /* ===== AJUSTE DE ALINEACIÓN VERTICAL ===== */
 /* Si aún parece descentrado verticalmente, prueba esto: */
