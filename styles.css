@@ -9,8 +9,8 @@ body {
   background: #000;
   color: #fff;
   font-family: "Inter", system-ui, -apple-system, sans-serif;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* ===== CONTENEDOR PRINCIPAL ===== */
@@ -19,142 +19,90 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Cambiado a min-height para mejor compatibilidad */
   text-align: center;
-  position: relative;
+  min-height: 100vh;
+  padding: 2rem;
 }
 
-/* ===== TÍTULO PRINCIPAL (NOT SOO DEEP) ===== */
+/* ===== TÍTULO PRINCIPAL ===== */
 .cover h2 {
   font-size: 3rem;
   font-weight: 400;
   letter-spacing: 0.3em;
-  
-  /* Solución 1: Usar text-indent para compensar */
-  text-indent: 0.3em; /* Compensa visualmente el letter-spacing */
-  
-  /* Solución 2: O usar un contenedor con overflow */
+  line-height: 1.2;
+  margin-bottom: 2rem;
   display: inline-block;
-  margin: 0; /* Elimina márgenes por defecto */
-  padding: 0;
-  line-height: 1;
-  margin-bottom: 2.0rem;
-  
-  /* Asegurar que no haya espacios en blanco extra */
   white-space: nowrap;
 }
 
-/* Eliminar el espacio extra del letter-spacing al final */
-.cover h2::after {
-  content: '';
-  display: inline-block;
-  width: 0.3em; /* Igual al letter-spacing */
-  height: 0;
-}
-
-/* ===== NAVEGACIÓN (HOME ABOUT PROJECTS) ===== */
-
-/* ===== NAVEGACIÓN (HOME ABOUT PROJECTS) ===== */
+/* ===== NAVEGACIÓN PRINCIPAL ===== */
 .cover-nav {
   display: flex;
-  justify-content: center;  /* centra los enlaces horizontalmente */
-  gap: 10rem;                /* distancia entre enlaces, ajusta a tu gusto */
-  width: 100%;
-  max-width: 900px;
-  margin-top: 2rem;         /* separa del h2 */
-  word-spacing: 5rem
+  justify-content: center;
+  gap: 3rem; /* Ajustable según tamaño de pantalla */
+  flex-wrap: wrap; /* Para que en celular se acomoden en varias líneas */
 }
 
 .cover-nav a {
   color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
-  word-spacing: 10rem
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   transition: opacity 0.3s;
-  padding: 0.5em 0;          /* espacio vertical para hacer clic más fácil */
-  
-  position: relative;        /* necesario si quieres animaciones u otros pseudo-elementos */
-  left: 0;                   /* eliminamos compensaciones raras */
+  padding: 0.5rem 0;
 }
 
 .cover-nav a:hover {
   opacity: 0.8;
 }
 
-/* Si quieres usar un contenedor wrapper para más control */
-.cover-nav-wrapper {
-  display: flex;
-  justify-content: center;   /* centra todos los enlaces */
-  width: 100%;
-  max-width: 900px;
-  /* padding opcional si quieres compensar visualmente */
-}
-
-
-
-
-/* ===== AJUSTE DE ALINEACIÓN VERTICAL ===== */
-/* Si aún parece descentrado verticalmente, prueba esto: */
-.cover::before {
-  content: '';
-  flex: 1;
-  min-height: 20px;
-}
-
-.cover::after {
-  content: '';
-  flex: 1;
-  min-height: 20px;
-}
-
+/* ===== ABOUT LAYOUT ===== */
 .about-layout {
   display: grid;
   grid-template-columns: 1fr 380px;
   grid-template-rows: auto auto;
-  gap: 40px;
+  gap: 2rem;
   max-width: 900px;
-
-  margin: 0 auto;                 /* centra horizontal */
-  min-height: 100vh;              /* ocupa toda la altura */
-  align-content: center;          /* centra verticalmente */
-
-  color: #fff;                    /* blanco puro */
-  font-weight: 100;               /* negrita */
+  margin: 0 auto;
+  min-height: 100vh;
+  align-content: center;
+  padding: 2rem;
 }
 
 /* TEXTO */
 .about-text {
   grid-column: 1;
   grid-row: 1;
-  font-size: 30px;
-  line-height: 2;
-  max-width: 420px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 100%;
   text-align: justify;
 }
-
 
 /* IMAGEN */
 .about-image {
   grid-column: 2;
   grid-row: 1 / span 2;
   width: 100%;
+  object-fit: cover;
+  border-radius: 10px; /* opcional */
 }
 
-/* NAV */
+/* NAV SECUNDARIO */
 .mini-nav {
   grid-column: 2;
   grid-row: 2;
   display: flex;
-  gap: 32px;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .mini-link {
   color: #fff;
-  text-decoration: none;   /* 🔑 quita líneas de abajo */
-  font-size: 13px;
+  text-decoration: none;
+  font-size: 0.8rem;
   letter-spacing: 1px;
   opacity: 0.8;
   transition: opacity 0.3s ease;
@@ -163,6 +111,52 @@ body {
 .mini-link:hover {
   opacity: 1;
 }
+
+/* ===== MEDIA QUERIES PARA RESPONSIVE ===== */
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .cover h2 {
+    font-size: 2rem;
+    letter-spacing: 0.2em;
+  }
+
+  .cover-nav {
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1.5rem;
+  }
+
+  .about-image {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: auto;
+  }
+
+  .mini-nav {
+    grid-column: 1;
+    grid-row: 3;
+    justify-content: center;
+  }
+}
+
+/* Para pantallas muy grandes */
+@media (min-width: 1200px) {
+  .cover h2 {
+    font-size: 4rem;
+  }
+
+  .cover-nav {
+    gap: 5rem;
+  }
+}
+
 
 
 
