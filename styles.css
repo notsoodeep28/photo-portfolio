@@ -21,142 +21,112 @@ body {
   align-items: center;
   text-align: center;
   min-height: 100vh;
-  padding: 2rem;
+  padding: 0 5vw; /* Padding responsivo */
 }
 
-/* ===== TÍTULO PRINCIPAL ===== */
+/* ===== TÍTULO PRINCIPAL (EL FIX DEFINITIVO) ===== */
 .cover h2 {
-  font-size: 3rem;
   font-weight: 400;
-  letter-spacing: 0.3em;
   line-height: 1.2;
   margin-bottom: 2rem;
-  display: inline-block;
-  white-space: nowrap;
+  text-transform: uppercase;
+  white-space: nowrap; 
+  display: block;
+  width: 100%;
+  
+  /* 1. Usamos una fuente base que se adapte */
+  font-size: clamp(1rem, 10vw, 4rem);
+  
+  /* 2. El truco maestro: 
+     Si el texto sigue siendo más ancho que el contenedor, 
+     lo forzamos a encajar visualmente. */
+  overflow: hidden;
+}
+
+/* En pantallas muy pequeñas, ajustamos el tracking para ganar espacio */
+@media (max-width: 480px) {
+  .cover h2 {
+    font-size: 8.5vw; /* Tamaño dinámico agresivo */
+    letter-spacing: -0.02em; /* Pegamos un poco las letras para que quepan */
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* ===== NAVEGACIÓN PRINCIPAL ===== */
 .cover-nav {
   display: flex;
   justify-content: center;
-  gap: 3rem; /* Ajustable según tamaño de pantalla */
-  flex-wrap: wrap; /* Para que en celular se acomoden en varias líneas */
+  gap: clamp(1rem, 5vw, 3rem);
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .cover-nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: clamp(0.8rem, 3vw, 1.1rem);
   font-weight: 400;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: opacity 0.3s;
-  padding: 0.5rem 0;
-}
-
-.cover-nav a:hover {
-  opacity: 0.8;
 }
 
 /* ===== ABOUT LAYOUT ===== */
 .about-layout {
   display: grid;
   grid-template-columns: 1fr 380px;
-  grid-template-rows: auto auto;
   gap: 2rem;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   min-height: 100vh;
   align-content: center;
   padding: 2rem;
 }
 
-/* TEXTO */
 .about-text {
-  grid-column: 1;
-  grid-row: 1;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  max-width: 100%;
+  font-size: 1.1rem;
+  line-height: 1.6;
   text-align: justify;
 }
 
-/* IMAGEN */
 .about-image {
-  grid-column: 2;
-  grid-row: 1 / span 2;
   width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 10px; /* opcional */
+  border-radius: 4px;
 }
 
-/* NAV SECUNDARIO */
 .mini-nav {
-  grid-column: 2;
-  grid-row: 2;
   display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .mini-link {
   color: #fff;
   text-decoration: none;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  text-transform: uppercase;
 }
 
-.mini-link:hover {
-  opacity: 1;
-}
-
-/* ===== MEDIA QUERIES PARA RESPONSIVE ===== */
-
-/* Para pantallas pequeñas (móviles) */
-@media (max-width: 768px) {
-  .cover h2 {
-    font-size: 2rem;
-    letter-spacing: 0.2em;
-  }
-
-  .cover-nav {
-    gap: 1.5rem;
-    flex-direction: column;
-  }
-
+/* ===== RESPONSIVE PARA EL LAYOUT DE ABAJO ===== */
+@media (max-width: 850px) {
   .about-layout {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 1.5rem;
+    text-align: center;
+    padding-top: 5rem;
   }
-
+  
   .about-image {
-    grid-column: 1;
-    grid-row: 2;
-    width: 100%;
-    height: auto;
+    height: 300px;
+    order: -1; /* La imagen sube arriba del texto en móvil */
   }
 
   .mini-nav {
-    grid-column: 1;
-    grid-row: 3;
     justify-content: center;
   }
 }
-
-/* Para pantallas muy grandes */
-@media (min-width: 1200px) {
-  .cover h2 {
-    font-size: 4rem;
-  }
-
-  .cover-nav {
-    gap: 5rem;
-  }
-}
-
 
 
 
