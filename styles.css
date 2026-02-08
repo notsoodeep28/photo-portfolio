@@ -79,53 +79,57 @@ body {
   }
 }
 
-/* ===== NAVEGACIÓN PRINCIPAL ===== */
+/* ===== NAVEGACIÓN PRINCIPAL - VERSIÓN FORZADA ===== */
 .cover-nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 0 1rem;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 4rem !important; /* Forzar espaciado */
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  padding: 0 1rem !important;
 }
 
 .cover-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: opacity 0.3s;
-  white-space: nowrap;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  transition: opacity 0.3s !important;
+  white-space: nowrap !important;
+  
+  /* FORZAR MARGEN ENTRE ENLACES */
+  margin: 0 1.5rem !important; /* Añade espacio a los lados de cada palabra */
 }
 
 .cover-nav a:hover {
-  opacity: 0.7;
+  opacity: 0.7 !important;
 }
 
 @media (max-width: 768px) {
   .cover-nav {
-    gap: 1.5rem;
+    gap: 3rem !important;
   }
   
   .cover-nav a {
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
+    margin: 0 1rem !important;
   }
 }
 
 @media (max-width: 480px) {
   .cover-nav {
-    gap: 1rem;
-    padding: 0 0.5rem;
+    gap: 2rem !important;
+    padding: 0 0.5rem !important;
   }
   
   .cover-nav a {
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
+    font-size: 0.8rem !important;
+    letter-spacing: 0.08em !important;
+    margin: 0 0.75rem !important; /* Espacio en móvil */
   }
 }
-
 /* ===== ABOUT LAYOUT ===== */
 .about-layout {
   display: grid;
