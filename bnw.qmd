@@ -1,18 +1,4 @@
 ---
 title: ""
 ---
-<<<<<<< HEAD
-=======
 
-::: gallery
-![](images/11-1-26-11.jpg)
-
-![](images/10-1-26-02.jpg)
-
-![](images/10-1-26-16.jpg)
-
-![](images/20260201-DSV_8554.jpg)
-
-![](images/beachdays-14.jpg)
-:::
->>>>>>> b4deadf8054542b6fca4ec29ad6e34515d769124

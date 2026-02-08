@@ -8,7 +8,7 @@ page-layout: full
 
 <nav class="cover-nav">
 
-<a href="index.html">HOME</a> <a href="about.html">ABOUT</a> <a href="projects.html">PROJECTS</a> <a href="MORE.html">MORE</a>
+ <a href="about.html">ABOUT</a> <a href="projects.html">PROJECTS</a> <a href="MORE.html">MORE</a>
 
 </nav>
 :::
