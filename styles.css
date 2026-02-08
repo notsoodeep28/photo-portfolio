@@ -21,34 +21,46 @@ body {
   align-items: center;
   text-align: center;
   min-height: 100vh;
-  padding: 0 5vw; /* Padding responsivo */
+  padding: 2rem clamp(1rem, 5vw, 3rem); /* Padding vertical fijo + horizontal responsivo */
 }
 
-/* ===== TÍTULO PRINCIPAL (EL FIX DEFINITIVO) ===== */
+/* ===== TÍTULO PRINCIPAL (SOLUCIÓN DEFINITIVA) ===== */
 .cover h2 {
   font-weight: 400;
-  line-height: 1.2;
-  margin-bottom: 2rem;
+  line-height: 1.1;
+  margin-bottom: clamp(1rem, 4vh, 2rem);
   text-transform: uppercase;
-  white-space: nowrap; 
-  display: block;
   width: 100%;
+  max-width: 100%;
   
-  /* 1. Usamos una fuente base que se adapte */
-  font-size: clamp(1rem, 10vw, 4rem);
+  /* Tamaño base responsivo mejorado */
+  font-size: clamp(1.5rem, 8vw, 4rem);
   
-  /* 2. El truco maestro: 
-     Si el texto sigue siendo más ancho que el contenedor, 
-     lo forzamos a encajar visualmente. */
-  overflow: hidden;
+  /* Permitimos wrap en móvil para títulos largos */
+  white-space: normal;
+  word-break: break-word;
+  hyphens: auto;
 }
 
-/* En pantallas muy pequeñas, ajustamos el tracking para ganar espacio */
-@media (max-width: 480px) {
+/* Ajustes específicos para pantallas pequeñas */
+@media (max-width: 600px) {
   .cover h2 {
-    font-size: 8.5vw; /* Tamaño dinámico agresivo */
-    letter-spacing: -0.02em; /* Pegamos un poco las letras para que quepan */
-    margin-bottom: 1.5rem;
+    font-size: clamp(1.2rem, 7vw, 2.5rem);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+}
+
+/* Extra pequeño (menos de 400px) */
+@media (max-width: 400px) {
+  .cover {
+    padding: 1.5rem 1rem;
+  }
+  
+  .cover h2 {
+    font-size: clamp(1rem, 6.5vw, 2rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
   }
 }
 
@@ -56,19 +68,37 @@ body {
 .cover-nav {
   display: flex;
   justify-content: center;
-  gap: clamp(1rem, 5vw, 3rem);
+  gap: clamp(0.8rem, 4vw, 3rem);
   flex-wrap: wrap;
   width: 100%;
+  max-width: 100%;
+  padding: 0 1rem;
 }
 
 .cover-nav a {
   color: #fff;
   text-decoration: none;
-  font-size: clamp(0.8rem, 3vw, 1.1rem);
+  font-size: clamp(0.75rem, 2.5vw, 1.1rem);
   font-weight: 400;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: opacity 0.3s;
+  padding: 0.5rem 0; /* Área clickeable más grande en móvil */
+}
+
+.cover-nav a:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+  .cover-nav {
+    gap: clamp(0.5rem, 3vw, 1.5rem);
+  }
+  
+  .cover-nav a {
+    font-size: clamp(0.7rem, 2.8vw, 0.95rem);
+    letter-spacing: 0.05em;
+  }
 }
 
 /* ===== ABOUT LAYOUT ===== */
@@ -84,7 +114,7 @@ body {
 }
 
 .about-text {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   line-height: 1.6;
   text-align: justify;
 }
@@ -100,31 +130,52 @@ body {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .mini-link {
   color: #fff;
   text-decoration: none;
-  font-size: 0.7rem;
+  font-size: clamp(0.65rem, 1.5vw, 0.7rem);
   opacity: 0.6;
   text-transform: uppercase;
+  transition: opacity 0.3s;
 }
 
-/* ===== RESPONSIVE PARA EL LAYOUT DE ABAJO ===== */
+.mini-link:hover {
+  opacity: 1;
+}
+
+/* ===== RESPONSIVE PARA EL LAYOUT DE ABOUT ===== */
 @media (max-width: 850px) {
   .about-layout {
     grid-template-columns: 1fr;
-    text-align: center;
-    padding-top: 5rem;
+    text-align: left; /* Mejor para lectura en móvil */
+    padding: 5rem 1.5rem 2rem;
+  }
+  
+  .about-text {
+    text-align: left;
   }
   
   .about-image {
-    height: 300px;
-    order: -1; /* La imagen sube arriba del texto en móvil */
+    height: clamp(250px, 50vh, 400px);
+    order: -1;
   }
-
+  
   .mini-nav {
-    justify-content: center;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-layout {
+    padding: 4rem 1rem 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  .about-image {
+    height: clamp(200px, 40vh, 300px);
   }
 }
 
