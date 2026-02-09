@@ -2,3 +2,14 @@
 title: ""
 ---
 
+<div class="photo-gallery">
+  <img src="images/10-1-26-02-03.jpg">
+  <img src="images/11-1-26-11-02.jpg">
+  
+  <nav class="mini-nav">
+    <a href="index.html" class="mini-link">HOME</a>
+    <a href="projects.html" class="mini-link">PROJECTS</a>
+    <a href="https://instagram.com/not_soo_deep" target="_blank" class="mini-link">INSTAGRAM</a>
+    <a href="https://www.lomography.com/homes/not_soo_deep" target="_blank" class="mini-link">LOMOGRAHPY</a>
+  </nav>
+</div>
