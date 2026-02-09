@@ -11,6 +11,7 @@ body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* ===== CONTENEDOR PRINCIPAL ===== */
@@ -321,36 +322,88 @@ body {
 
 
 
-
-/* ===== PHOTO GALLERY – EDITORIAL ===== */
-.photo-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 4rem auto;
-  padding: 0 2rem;
+/* ===== CONTENEDOR GENERAL ===== */
+.gallery {
+  width: 100%;
+  min-height: 100vh;
 }
 
-.photo-gallery figure {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 4; /* CLAVE para fotos verticales */
-  overflow: hidden;
-  border-radius: 4px;
-  background: #000;
+/* ===== TÍTULO ===== */
+.gallery-title {
+  text-align: center;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  margin: 100px 0 60px;
 }
 
-.photo-gallery img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 🔥 */
+
+/* ===== GRID MASONRY ===== */
+.photo-grid {
+  column-count: 2;
+  column-gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto 120px;
+  padding: 0 40px;
+}
+
+.photo-grid {
+  column-count: 2;
+  column-gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto 120px;
+  padding: 0 40px;
+}
+
+.photo-grid img {
   display: block;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  opacity: 0.95;
+  width: 100%;
+  height: auto;
 }
 
-.photo-gallery figure:hover img {
-  transform: scale(1.03);
-  opacity: 1;
+.photo-grid figure {
+  background: #fff;
+  padding: 1px;              /* grosor del marco */
+  break-inside: avoid;
+  margin-bottom: 40px;
 }
+
+/* ===== CAPTION ===== */
+.photo-grid figcaption {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: rgba(0,0,0,0.6);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .photo-grid {
+    column-count: 1;
+    padding: 0 20px;
+  }
+
+  .gallery-title {
+    margin: 80px 0 60px;
+  }
+}
+
+/* ===== QUARTO TITLE ===== */
+.title {
+  font-family: inherit;   /* 👈 usa el mismo font que el body */
+  text-align: left;
+  font-size: 2rem;        /* ajusta si quieres un poco más o menos */
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin: 120px 40px 60px;
+  color: #fff;
+}
+
+/* evita estilos default de Quarto */
+.quarto-title-block {
+  margin-bottom: 0;
+}
+
+
+

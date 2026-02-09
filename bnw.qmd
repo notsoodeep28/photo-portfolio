@@ -2,14 +2,38 @@
 title: ""
 ---
 
-<div class="photo-gallery">
-  <img src="images/10-1-26-02-03.jpg">
-  <img src="images/11-1-26-11-02.jpg">
+<h1 class="title">BLACK AND WHITE</h1>
+
+<div class="photo-grid">
+  <figure>
+    <img src="images/11-1-26-11.jpg" alt="Foto 1">
+    <figcaption>Patriots</figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/beachdays-14.jpg" alt="Foto 2">
+    <figcaption>Quiet afternoon by the sea</figcaption>
+  </figure>
   
-  <nav class="mini-nav">
-    <a href="index.html" class="mini-link">HOME</a>
-    <a href="projects.html" class="mini-link">PROJECTS</a>
-    <a href="https://instagram.com/not_soo_deep" target="_blank" class="mini-link">INSTAGRAM</a>
-    <a href="https://www.lomography.com/homes/not_soo_deep" target="_blank" class="mini-link">LOMOGRAHPY</a>
-  </nav>
+  <figure>
+    <img src="images/20260201-DSV_8554.jpg" alt="Foto 2">
+    <figcaption>SQUARED</figcaption>
+  </figure>
+  <figure>
+    <img src="images/10-1-26-02.jpg" alt="Foto 2">
+    <figcaption>QUACK</figcaption>
+  </figure>
+  <figure>
+    <img src="images/10-1-26-16.jpg" alt="Foto 2">
+    <figcaption>Silly Goose</figcaption>
+  </figure>
+  
+  
 </div>
+
+<nav class="projects-nav">
+    <a href="index.html" class="mini-link">HOME</a>
+    <a href="about.html" class="mini-link">ABOUT</a>
+    <a href="projects.html" class="mini-link">PROJECTS</a>
+  </nav>
+
